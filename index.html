@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+<meta charset="UTF-8">
+<title>Для тебе❤️</title>
+<style>
+body {
+  background: #fff0f5;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: #ff4d6d;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.no {
+  background: gray;
+  color: white;
+  position: relative;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Ти будеш моєю валентинкою? ❤️</h1>
+  <img src="love1.jpg" width="200" style="border-radius:20px; margin:10px">
+  <br>
+  <button class="yes" onclick="yesClick()">Да</button>
+  <button class="no" onmouseover="moveButton()">Нет</button>
+</div>
+
+<script>
+function yesClick() {
+  // Переход на следующую страницу
+  window.location.href = "love.html";
+}
+
+function moveButton() {
+  const button = document.querySelector(".no");
+  const x = Math.random() * (window.innerWidth - 150);
+  const y = Math.random() * (window.innerHeight - 100);
+  button.style.position = "absolute";
+  button.style.left = x + "px";
+  button.style.top = y + "px";
+}
+</script>
+
+</body>
+</html>

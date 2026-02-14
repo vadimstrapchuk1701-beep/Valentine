@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Я тебе кохаю ❤️</title>
+<style>
+body {
+  background: #ffe6f0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 50px;
+  overflow-x: hidden;
+}
+
+/* Текст сверху */
+h1 {
+  color: #ff3366;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* Блок с фото */
+.photos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.photos img {
+  width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.photos img:hover {
+  transform: scale(1.1); /* при наведении фото слегка увеличивается */
+}
+
+/* Анимация падающих сердечек */
+.heart {
+  position: fixed;
+  color: #ff3366;
+  font-size: 24px;
+  animation: fall linear infinite;
+  user-select: none;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<h1>Я тебе кохаю дуже сильно сонце, і сумую також дуже:( ❤️</h1>
+
+<div class="photos">
+  <img src="love.jpg" alt="Моё фото">
+  <img src="love3.jpg" alt="Твоё фото">
+</div>
+
+<script>
+// Генерация падающих сердечек
+function createHeart() {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.innerText = '❤️';
+  heart.style.left = Math.random() * window.innerWidth + 'px';
+  heart.style.fontSize = (20 + Math.random() * 20) + 'px';
+  heart.style.animationDuration = (3 + Math.random() * 3) + 's';
+  document.body.appendChild(heart);
+
+  // Удаляем сердечко после падения
+  setTimeout(() => {
+    heart.remove();
+  }, 6000);
+}
+
+// Создаём новые сердечки каждые 300 мс
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
